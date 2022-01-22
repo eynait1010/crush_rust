@@ -1,27 +1,22 @@
-// 猜数游戏
-use std::io;
-use rand::Rng;
-use std::cmp::Ordering;
-
 fn main() {
-   println!("Guess the number!");
-   let secret_num = rand::thread_rng().gen_range(1,101);
-   loop {
-        println!("Please input your guess.");
-        let mut num = String::new();
-        io::stdin().read_line(&mut num).expect("Fail to read line");
-        let num:u32 = match num.trim().parse(){
-            Ok(num) => num,
-            Err(_) => continue,
-        };
-        println!("your num is: {}",num);
-        match num.cmp(&secret_num) {
-            Ordering::Less => println!("Too small"),
-            Ordering::Greater => println!("Too Large"),
-            Ordering::Equal => {
-                println!("Win");
-                break;
-            },
-        }
-   }
+    let tup = (500, 6.4, 1);
+    // pattern matching to destructure
+    let (x, y, z) = tup;
+
+    println!("{} {} {}", x,y,z);
+
+    let five_hundred = tup.0;
+    let six_point_four = tup.1;
+    let one = tup.2;
+
+    println!("{} {} {}",five_hundred,six_point_four,one);
+
+    let _a = [1, 2, 3, 4, 5];
+    let _b: [i32; 5] = [1, 2, 3, 4, 5];
+    let _c = [3; 5];
+
+    let first = _a[0];
+    let second = _a[1];
+
+    println!("{}{}",first,second)
 }
