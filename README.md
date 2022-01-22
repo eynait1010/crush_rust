@@ -40,3 +40,12 @@ Expressions evaluate to a resulting value.
 Expressions do not include ending semicolons. If you add a semicolon to the end of an expression, you turn it into a statement, and it will then not return a value. 
 
 Function bodies are made up of a series of statements optionally ending in an expression. 
+
+### 3.5 Control Flow
+
+- if Expressions
+The condition in this code must be a bool.
+Using if in a let Statement: variables must have a single type, and Rust needs to know at compile time what type the number variable is
+- loop
+- while
+- for
