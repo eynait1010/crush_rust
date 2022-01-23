@@ -1,36 +1,18 @@
 fn main() {
-    // if
-    let condition = true;
-    let number = if condition {5}else{6};
-    println!("{}",number);
+    // heap: move
+    let s1 = String::from("hello");
+    let s2 = s1;
+    // println!("{}{}, world!", s1, s2);// borrow of moved value: `s1`
 
-    // loop
-    let mut counter = 0;
-    let result = loop {
-        counter += 1;
+    // heap: clone
+    let s1 = String::from("hello");
+    let s2 = s1.clone();
 
-        if counter == 10 {
-            break counter * 2;
-        }
-    };
-    println!("The result is {}", result);
+    println!("s1 = {}, s2 = {}", s1, s2);
+    
+    // stack clone
+    let x = 5;
+    let y = x;
 
-    // while
-    let mut number = 3;
-    while number != 0 {
-        println!("{}!", number);
-        number = number - 1;
-    }
-    println!("LIFTOFF!!!");
-
-    // for 
-    let a = [10, 20, 30, 40, 50];
-    // better than   while index < 5 , or use Range
-    for element in a.iter() {
-        println!("the value is: {}", element);
-    }
-    for number in (1..4).rev() {
-        println!("{}!", number);
-    }
-    println!("LIFTOFF!!!");
+    println!("x = {}, y = {}", x, y);
 }

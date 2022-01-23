@@ -49,3 +49,22 @@ Using if in a let Statement: variables must have a single type, and Rust needs t
 - loop
 - while
 - for
+
+## Ownership
+
+### 3.1 conception
+- heap
+The heap is less organized: when you put data on the heap, 
+1. you request a certain amount of space. 
+2. The memory allocator finds an empty spot in the heap that is big enough, marks it as being in use
+3.  returns a pointer, which is the address of that location. This process is called allocating on the heap and is sometimes abbreviated as just allocating.
+
+- ownership rule
+1. Each value in Rust has a variable that’s called its owner.
+2. There can only be one owner at a time.
+3. When the owner goes out of scope, the value will be dropped.
+- Move
+
+#### Ownership and Functions
+
+The semantics for passing a value to a function are similar to those for assigning a value to a variable. Passing a variable to a function will move or copy, just as assignment does.Returning values can also transfer ownership. 
