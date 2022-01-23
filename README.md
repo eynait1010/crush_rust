@@ -68,3 +68,22 @@ The heap is less organized: when you put data on the heap,
 #### Ownership and Functions
 
 The semantics for passing a value to a function are similar to those for assigning a value to a variable. Passing a variable to a function will move or copy, just as assignment does.Returning values can also transfer ownership. 
+
+### References and Borrowing
+#### borrowing
+```rs
+let a = String::from("hello");
+func(&a)
+```
+#### Mutable References
+```rs
+let mut s = String::from("hello");
+change(&mut s);
+```
+#### rules
+At any given time, 
+you can have either one mutable reference or any number of immutable references.
+References must always be valid. **scopes is matter**
+### Dangling References
+Data will not go out of scope before the reference to the data does
+So when create a variable, return it rather than its reference
