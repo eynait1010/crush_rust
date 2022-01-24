@@ -1,31 +1,39 @@
 fn main() {
-    let mut s = String::from("hello");
-
-    let r1 = &s; // no problem
-    let r2 = &s; // no problem
-    println!("{} and {}", r1, r2);
-    // variables r1 and r2 will not be used after this point
-
-    let r3 = &mut s; // no problem
-    println!("{}", r3);
-
-    let mut s2 = String::from("hello");
-
-    {
-        let r4 = &mut s2;
-    } // r1 goes out of scope here, so we can make a new reference with no problems.
-
-    let r5 = &mut s2;
-    println!("{}",  r5);
-
-    // let reference_to_nothing = dangle();
-    let reference_to_nothing = no_dangle();
+    let a = "hello world";
+    let b = String::from("Hello World");
+   
+    // before
+    let World = first_word(&b);
+    println!("{}",World);
+    // after
+     let world = first_word_after(a);
+     // ? TODO:
+     let world2 = first_word_after(&a[..]);
+    let World =first_word_after(&b[..]);
+    println!("{}{}{}",world,World,world2)
 }
-// fn dangle() -> &String {
-//     let s = String::from("hello");
-//     &s
-// }
-fn no_dangle() -> String {
-    let s = String::from("hello");
-    s
+
+fn first_word(s: &String) -> &str {
+    let bytes = s.as_bytes();
+    // iter is a method that returns each element in a collection  
+    // enumerate wraps the result of iter and returns each element as part of a tuple instead. 
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' '{
+            return &s[0..i];
+        }
+    }
+    &s[..]
+
+}
+fn first_word_after(s: &str) -> &str {
+    let bytes = s.as_bytes();
+    // iter is a method that returns each element in a collection  
+    // enumerate wraps the result of iter and returns each element as part of a tuple instead. 
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' '{
+            return &s[0..i];
+        }
+    }
+    &s[..]
+
 }

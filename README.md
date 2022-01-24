@@ -69,7 +69,7 @@ The heap is less organized: when you put data on the heap,
 
 The semantics for passing a value to a function are similar to those for assigning a value to a variable. Passing a variable to a function will move or copy, just as assignment does.Returning values can also transfer ownership. 
 
-### References and Borrowing
+### 3.2References and Borrowing
 #### borrowing
 ```rs
 let a = String::from("hello");
@@ -84,6 +84,13 @@ change(&mut s);
 At any given time, 
 you can have either one mutable reference or any number of immutable references.
 References must always be valid. **scopes is matter**
-### Dangling References
+#### Dangling References
 Data will not go out of scope before the reference to the data does
 So when create a variable, return it rather than its reference
+
+### 3.3 Slice
+Having to worry about the index in word getting out of sync with the data in s is tedious and error prone! So slice
+String Literals Are Slices
+
+**iter** is a method that returns each element in a collection  
+**enumerate** wraps the result of iter and returns each element as part of a tuple instead. 
