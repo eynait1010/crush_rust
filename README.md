@@ -101,3 +101,5 @@ String Literals Are Slices
 - Field Init Shorthand 
 - Struct Update Syntax
 - Tuple 
+  
+### 5.2 method
