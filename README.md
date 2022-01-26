@@ -52,7 +52,7 @@ Using if in a let Statement: variables must have a single type, and Rust needs t
 
 ## Ownership
 
-### 3.1 conception
+### 4.1 conception
 - heap
 The heap is less organized: when you put data on the heap, 
 1. you request a certain amount of space. 
@@ -69,7 +69,7 @@ The heap is less organized: when you put data on the heap,
 
 The semantics for passing a value to a function are similar to those for assigning a value to a variable. Passing a variable to a function will move or copy, just as assignment does.Returning values can also transfer ownership. 
 
-### 3.2References and Borrowing
+### 4.2References and Borrowing
 #### borrowing
 ```rs
 let a = String::from("hello");
@@ -88,9 +88,16 @@ References must always be valid. **scopes is matter**
 Data will not go out of scope before the reference to the data does
 So when create a variable, return it rather than its reference
 
-### 3.3 Slice
+### 4.3 Slice
 Having to worry about the index in word getting out of sync with the data in s is tedious and error prone! So slice
 String Literals Are Slices
 
 **iter** is a method that returns each element in a collection  
 **enumerate** wraps the result of iter and returns each element as part of a tuple instead. 
+
+## structure
+
+### 5.1 
+- Field Init Shorthand 
+- Struct Update Syntax
+- Tuple 
