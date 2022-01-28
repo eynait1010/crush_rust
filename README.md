@@ -34,8 +34,10 @@ Rust doesn’t care where you define your functions, only that they’re defined
 - parameters
 - arguments
 - statement 
+  
 Statements are instructions that perform some action and do not return a value. 
 - expressions 
+  
 Expressions evaluate to a resulting value.
 Expressions do not include ending semicolons. If you add a semicolon to the end of an expression, you turn it into a statement, and it will then not return a value. 
 
@@ -44,6 +46,7 @@ Function bodies are made up of a series of statements optionally ending in an ex
 ### 3.5 Control Flow
 
 - if Expressions
+  
 The condition in this code must be a bool.
 Using if in a let Statement: variables must have a single type, and Rust needs to know at compile time what type the number variable is
 - loop
@@ -54,12 +57,14 @@ Using if in a let Statement: variables must have a single type, and Rust needs t
 
 ### 4.1 conception
 - heap
+  
 The heap is less organized: when you put data on the heap, 
 1. you request a certain amount of space. 
 2. The memory allocator finds an empty spot in the heap that is big enough, marks it as being in use
 3.  returns a pointer, which is the address of that location. This process is called allocating on the heap and is sometimes abbreviated as just allocating.
 
 - ownership rule
+  
 1. Each value in Rust has a variable that’s called its owner.
 2. There can only be one owner at a time.
 3. When the owner goes out of scope, the value will be dropped.
@@ -106,14 +111,17 @@ String Literals Are Slices
 Methods are similar to functions: they’re declared with the fn keyword and their name, they can have parameters and a return value, and they contain some code that is run when they’re called from somewhere else. However, methods are different from functions in that they’re defined within the context of a struct (or an enum or a trait object, which we cover in Chapters 6 and 17, respectively), and their first parameter is always self, which represents the instance of the struct the method is being called on.
 
 - -> operation
+
 Rust has a feature called automatic referencing and dereferencing.when you call a method with object.something(), Rust automatically adds in &, &mut, or * so object matches the signature of the method. In other words, the following are the same:
 ```rs
 p1.distance(&p2);
 (&p1).distance(&p2);
 ```
-- Associated Functions
+- Associated Functions 
+   
 All functions defined within an impl block are called associated functions because they’re associated with the type named after the impl. We can define associated functions that don’t have self as their first parameter (and thus are not methods) because they don’t need an instance of the type to work with. We’ve already used one function like this, the String::from function, that’s defined on the String type.
 
 Associated functions that aren’t methods **are often used for constructors** that will return a new instance of the struct. For example, we could provide an associated function that would have one dimension parameter and use that as both width and height, thus making it easier to create a square Rectangle rather than having to specify the same value twice
 - Multiple impl Blocks
+  
 Each struct is allowed to have multiple impl blocks. 
