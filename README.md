@@ -133,3 +133,5 @@ Each struct is allowed to have multiple impl blocks.
 ### 6.2 match
 - Option
 - _
+
+### 6.3 if let
