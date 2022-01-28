@@ -129,3 +129,7 @@ Each struct is allowed to have multiple impl blocks.
 ## 6.Enums and Pattern Matching
 ### 6.1 Enum
 - Option
+
+### 6.2 match
+- Option
+- _
