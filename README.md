@@ -100,7 +100,7 @@ String Literals Are Slices
 **iter** is a method that returns each element in a collection  
 **enumerate** wraps the result of iter and returns each element as part of a tuple instead. 
 
-## structure
+## 5.structure
 
 ### 5.1 
 - Field Init Shorthand 
@@ -125,3 +125,7 @@ Associated functions that aren’t methods **are often used for constructors** t
 - Multiple impl Blocks
   
 Each struct is allowed to have multiple impl blocks. 
+
+## 6.Enums and Pattern Matching
+### 6.1 Enum
+- Option
