@@ -103,3 +103,17 @@ String Literals Are Slices
 - Tuple 
   
 ### 5.2 method
+Methods are similar to functions: they’re declared with the fn keyword and their name, they can have parameters and a return value, and they contain some code that is run when they’re called from somewhere else. However, methods are different from functions in that they’re defined within the context of a struct (or an enum or a trait object, which we cover in Chapters 6 and 17, respectively), and their first parameter is always self, which represents the instance of the struct the method is being called on.
+
+- -> operation
+Rust has a feature called automatic referencing and dereferencing.when you call a method with object.something(), Rust automatically adds in &, &mut, or * so object matches the signature of the method. In other words, the following are the same:
+```rs
+p1.distance(&p2);
+(&p1).distance(&p2);
+```
+- Associated Functions
+All functions defined within an impl block are called associated functions because they’re associated with the type named after the impl. We can define associated functions that don’t have self as their first parameter (and thus are not methods) because they don’t need an instance of the type to work with. We’ve already used one function like this, the String::from function, that’s defined on the String type.
+
+Associated functions that aren’t methods **are often used for constructors** that will return a new instance of the struct. For example, we could provide an associated function that would have one dimension parameter and use that as both width and height, thus making it easier to create a square Rectangle rather than having to specify the same value twice
+- Multiple impl Blocks
+Each struct is allowed to have multiple impl blocks. 
